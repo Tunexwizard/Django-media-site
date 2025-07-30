@@ -1,1 +1,1 @@
-web: gunicorn fifth_contact_session.wsgi
+web: gunicorn core.wsgi

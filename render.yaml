@@ -3,9 +3,9 @@ services:
     name: django-media-site
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn fifth_contact_session.wsgi:application
+    startCommand: gunicorn core.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: fifth_contact_session.settings
+        value: core.settings
       - key: PYTHON_VERSION
         value: 3.10
