@@ -2,10 +2,12 @@ services:
   - type: web
     name: django-media-site
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn core.wsgi:application
+    plan: free
+    buildCommand: "python -m pip install -r requirements.txt"
+    startCommand: "gunicorn core.wsgi"
+    staticPublishPath: staticfiles
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: core.settings
       - key: PYTHON_VERSION
-        value: 3.10
+        value: 3.13
